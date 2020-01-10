@@ -19,6 +19,16 @@ trait HasRolesAndPermissionsTrait
     }
 
     /**
+     * assign a role during user registration
+     * @param Role $role
+     * @return mixed
+     */
+    public function assignRole(Role $role)
+    {
+        return $this->roles()->save($role);
+    }
+
+    /**
      * Check if the current logged in user has a role
      * @param mixed ...$roles
      * @return bool

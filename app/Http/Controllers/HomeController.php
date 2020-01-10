@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,9 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = User::find(1);
-//        dd($user->hasRole('project-manager'));// вернёт false
-        dd($user->hasRole('admin'));
+        $user = User::find(Auth::user()->id);
+//        dd($user->hasRole('redactor'));
+
         return view('home');
     }
 }
