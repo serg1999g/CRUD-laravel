@@ -20,6 +20,7 @@ trait HasRolesAndPermissionsTrait
 
     /**
      * assign a role during user registration
+     * 
      * @param Role $role
      * @return mixed
      */
@@ -30,6 +31,7 @@ trait HasRolesAndPermissionsTrait
 
     /**
      * Check if the current logged in user has a role
+     * 
      * @param mixed ...$roles
      * @return bool
      */
@@ -41,32 +43,6 @@ trait HasRolesAndPermissionsTrait
             }
         }
         return false;
-    }
-
-    /**
-     * Checks if the Role with Permission is tied to the User
-     * @param $permission
-     * @return bool
-     */
-    public function hasPermissionThroughRole($permission)
-    {
-        foreach ($permission->roles as $role) {
-            if ($this->roles->contains($role)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    /**
-     * Checks if the User has Permissions through the Role
-     * @param $permission
-     * @return bool
-     */
-    public function hasPermissionTo($permission)
-    {
-        return $this->hasPermissionThroughRole($permission);
     }
 }
 

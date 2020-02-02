@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = User::find(Auth::user()->id);
-//        dd($user->hasRole('redactor'));
+       dd($user->hasRole('redactor'));
 
         return view('home');
     }
