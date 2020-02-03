@@ -8,10 +8,21 @@ use App\Role\RoleChecker;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class CheckUserRole
+ * @package App\Http\Middleware
+ */
 class CheckUserRole
 {
+    /**
+     * @var RoleChecker
+     */
     protected $roleChecker;
 
+    /**
+     * CheckUserRole constructor.
+     * @param RoleChecker $roleChecker
+     */
     public function __construct(RoleChecker $roleChecker)
     {
         $this->roleChecker = $roleChecker;

@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'PostController@index')->name('home')->middleware('check_user_role:' . \App\Role\UserRole::ROLE_USER);
+Route::get('/home', 'PostController@index')->name('home')->middleware('check_user_role:' . \App\Role\UserRole::ROLE_REDACTOR);

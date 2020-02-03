@@ -2,9 +2,16 @@
 
 namespace App\Role;
 
-// The class will contain the roles that the user can have and their hierarchy.
+
+/**
+ * The class will contain the roles that the user can have and their hierarchy.
+ *
+ * Class UserRole
+ * @package App\Role
+ */
 class UserRole
 {
+
     const ROLE_ADMIN        = 'admin';
     const ROLE_REDACTOR     = 'redactor';
     const ROLE_USER         = 'user';
@@ -18,17 +25,27 @@ class UserRole
     ];
 
 
-    // get Allowed Roles
-    public static function getAllowedRoles($role)
+    /**
+     * get Allowed Roles
+     *
+     * @param $role
+     * @return array|mixed
+     */
+    public static function getAllowedRoles(string $role)
     {
-        if (isset($roleHierarchy[$role])) {
+        if (isset(self::$roleHierarchy[$role])) {
             return self::$roleHierarchy[$role];
         }
 
         return [];
     }
 
-    // get Role List
+
+    /**
+     * get Role List
+     *
+     * @return array
+     */
     public static function getRoleList()
     {
         return [
