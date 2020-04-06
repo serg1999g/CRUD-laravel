@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Role;
+namespace Modules\Auth\Services;
 
-use App\User;
+use App\Models\User;
+
 
 /**
  * Class RoleChecker

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Traits;
+namespace Modules\Auth\Traits;
 
-use App\Role;
+use Modules\Auth\Models\Role;
 
 /**
  * Trait HasRolesAndPermissionsTrait
@@ -20,7 +20,7 @@ trait HasRolesAndPermissionsTrait
 
     /**
      * assign a role during user registration
-     * 
+     *
      * @param Role $role
      * @return mixed
      */
@@ -31,7 +31,7 @@ trait HasRolesAndPermissionsTrait
 
     /**
      * Check if the current logged in user has a role
-     * 
+     *
      * @param mixed ...$roles
      * @return bool
      */

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Providers;
+namespace Modules\Auth\Providers;
 
-use App\Http\Middleware\CheckUserRole;
-use App\Role\RoleChecker;
+use Modules\Auth\Http\Middleware\CheckUserRole;
 use Illuminate\Console\Application;
 use Illuminate\Support\ServiceProvider;
+use Modules\Auth\Services\RoleChecker;
 
 class UserRoleServiceProvider extends ServiceProvider
 {

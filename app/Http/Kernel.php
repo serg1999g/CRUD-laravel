@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Modules\Auth\Http\Middleware\CheckUserRole;
 
 class Kernel extends HttpKernel
 {
@@ -63,7 +64,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
 
-        'check_user_role' => \App\Http\Middleware\CheckUserRole::class,
+        'check_user_role' => CheckUserRole::class,
     ];
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Role;
+namespace Modules\Auth\Services;
 
 
 /**
@@ -12,9 +12,9 @@ namespace App\Role;
 class UserRole
 {
 
-    const ROLE_ADMIN        = 'admin';
-    const ROLE_REDACTOR     = 'redactor';
-    const ROLE_USER         = 'user';
+    const ROLE_ADMIN = 'admin';
+    const ROLE_REDACTOR = 'redactor';
+    const ROLE_USER = 'user';
 
     protected static $roleHierarchy = [
         self::ROLE_ADMIN => ['*'],
@@ -38,20 +38,5 @@ class UserRole
         }
 
         return [];
-    }
-
-
-    /**
-     * get Role List
-     *
-     * @return array
-     */
-    public static function getRoleList()
-    {
-        return [
-            static::ROLE_ADMIN      => 'admin',
-            static::ROLE_REDACTOR   => 'redactor',
-            static::ROLE_USER       => 'user',
-        ];
     }
 }

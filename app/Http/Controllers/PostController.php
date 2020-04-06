@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\CheckUserRole;
-use App\Role\UserRole;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -18,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $user = User::find(Auth::user()->id);
-        dd($user->hasRole());
+//        dd($user->hasRole());
 
          return view('home');
     }
